@@ -1,0 +1,80 @@
+C:\Users\2000163804\OneDrive - Hexaware Technologies\Desktop\Projects\Toon>npm start          
+                     
+> toon-agent-client@1.0.0 start
+> node agent-client.js
+
+=== Azure AI Foundry Agent Client (TOON Format) ===
+
+Using official @toon-format/toon library
+
+Enter the programming language: C
+Enter the category: Database Entity Schema
+Enter the category description: This model is used to capture the schema and metadata of database entities from the parsed code file. Database entities can include tables, files, sequences, or other structures depending on the technology or programming language. This model provides detailed information about the structure, relationships, and characteristics of the database entity."
+
+Calling Azure AI Foundry Agent...
+
+🔐 Initializing Azure AI Project Client...
+✅ Azure AI Project Client initialized
+📡 Calling agent: asst_rfzhGcwbuNEuCeEfWYMf0uCX
+📌 Creating thread...
+✅ Thread created: thread_z0EVAUhCsfKs4YuM8g4YO46F
+📝 Adding message to thread...
+✅ Message added
+🔄 Creating run...
+✅ Run started: run_MwKzJoOTPEL6we96wAjVwRpW
+⏳ Waiting... Status: queued
+⏳ Waiting... Status: in_progress
+⏳ Waiting... Status: in_progress
+⏳ Waiting... Status: in_progress
+> ⏳ Waiting... Status: in_progress
+> ✅ Run completed. Status: completed
+📨 Retrieving messages...
+✅ Retrieved 2 messages
+✓ Successfully parsed JSON response from agent
+
+================================================================================
+AGENT RESPONSE (TOON FORMAT):
+================================================================================
+[22]{Category,Construct,ConstructVariant,SyntaxStructure,ExampleCodeSnippet,Remarks}:
+  Database Entity Schema,Struct,Struct Definition,"STRUCT [<identifier>] '{' {<type> <field> [;]}+ '}' [<variable> [= <init>] [,...]] ';'","struct EMPLOYEE {\n  int id;\n  char name[32];\n  float salary;\n} emp1, emp2;","Standard C; defines a record-like schema, fields are native variables. status=stable; version=C89/C99/C11"
+  Database Entity Schema,Struct,Struct Forward Declaration,STRUCT <identifier> ';',struct CUSTOMER;,"Forward-declares a struct type; no field details available, used for incomplete types. status=stable; version=C89+"
+  Database Entity Schema,Struct,Struct Variable Declaration,"STRUCT <identifier> <variable> [= <init>] [,...] ';'","struct EMPLOYEE emp;\nemp.id = 5;\nemp.salary = 7000.0;","Declares a variable of an existing struct schema, variable is non-native (record instance). status=stable"
+  Database Entity Schema,Struct,Struct Pointer Declaration,"STRUCT <identifier> *<variable> [,...] ';'","struct EMPLOYEE *empPtr;\nempPtr = &emp;",Declares pointer to struct entity; often used for database record references. status=stable
+  Database Entity Schema,Struct,Struct Array Declaration,"STRUCT <identifier> <variable>'['<size>']' [,...] ';'","struct EMPLOYEE team[10];\nteam[0].id = 1;",Declares an array of record entities. status=stable
+  Database Entity Schema,Union,Union Definition,"UNION [<identifier>] '{' {<type> <field> [;]}+ '}' [<variable> [= <init>] [,...]] ';'","union DB_VALUE {\n  int id;\n  float amount;\n  char code[8];\n} value1, value2;","Standard C; union for variant schema, only one field used at a time. status=stable"      
+  Database Entity Schema,Union,Union Forward Declaration,UNION <identifier> ';',union DB_FIELD;,Forward declares a union type; fields not yet defined. status=stable
+  Database Entity Schema,Union,Union Variable Declaration,"UNION <identifier> <variable> [= <init>] [,...] ';'","union DB_VALUE uval;\nuval.id = 101;","Declares a variable of union schema, non-native variable. status=stable"
+  Database Entity Schema,Union,Union Pointer Declaration,"UNION <identifier> *<variable> [,...] ';'","union DB_VALUE *uPtr;\nuPtr = &uval;",Declares pointer to a union entity record. status=stable
+  Database Entity Schema,Union,Union Array Declaration,"UNION <identifier> <variable>'['<size>']' [,...] ';'","union DB_VALUE cache[5];\ncache[0].amount = 12.5;",Declares array of union entities. status=stable
+  Database Entity Schema,Enum,Enum Definition,"ENUM [<identifier>] '{' {<enumerator> [= <value>] [,]}+ '}' [<variable> [= <init>] [,...]] ';'","enum SEQ_STATUS {\n  ACTIVE,\n  INACTIVE,\n  SUSPENDED\n} status;",Defines set of constants (often sequence status/metadata in DB context). status=stable
+  Database Entity Schema,Enum,Enum Forward Declaration,ENUM <identifier> ';',enum SEQ_TYPE;,Forward declare enum schema. Rare in practice; status=stable
+  Database Entity Schema,Enum,Enum Variable Declaration,"ENUM <identifier> <variable> [= <init>] [,...] ';'","enum SEQ_STATUS s;\ns = ACTIVE;",Declares variable of enum type. status=stable
+  Database Entity Schema,Typedef,Typedef Struct Definition,"TYPEDEF STRUCT [<identifier>] '{' {<type> <field> [;]}+ '}' <alias> ';'","typedef struct {\n  int seqId;\n  char desc[50];\n} SEQUENCE;",Defines new type alias for struct DB entity schema. status=stable
+  Database Entity Schema,Typedef,Typedef Struct Alias,TYPEDEF STRUCT <identifier> <alias> ';',typedef struct EMPLOYEE WORKER;,Aliases named struct type to new name. status=stable
+  Database Entity Schema,Typedef,Typedef Union Definition,"TYPEDEF UNION [<identifier>] '{' {<type> <field> [;]}+ '}' <alias> ';'","typedef union {\n  int refId;\n  double value;\n} DB_FIELD;",Creates alias type for union schema. status=stable
+  Database Entity Schema,Typedef,Typedef Union Alias,TYPEDEF UNION <identifier> <alias> ';',typedef union DB_VALUE VALUE;,Aliases named union schema to a new type. status=stable
+  Database Entity Schema,Typedef,Typedef Enum Definition,"TYPEDEF ENUM [<identifier>] '{' {<enumerator> [= <value>] [,]}+ '}' <alias> ';'","typedef enum {\n  PRIMARY,\n  SECONDARY\n} SEQ_TYPE;",Defines type alias for enum schema. status=stable
+  Database Entity Schema,Typedef,Typedef Enum Alias,TYPEDEF ENUM <identifier> <alias> ';',typedef enum SEQ_STATUS STATUS;,Aliases named enum for schema metadata use. status=stable
+  Database Entity Schema,File,File Type Declaration,TYPEDEF STRUCT <identifier> FILE;,typedef struct _FILE FILE;,System/implementation-wide file abstraction (stdio.h); used for DB file mapping. status=stable; dialect=GNU/ISO/ANSI
+  Database Entity Schema,File,File Pointer Declaration,"FILE *<variable> [,...] ';'","FILE *dbFile;\ndbFile = fopen(\"data.db\", \"rb\");","Pointer to file entity, common for DB access. status=stable"      
+  Database Entity Schema,File,File Array Declaration,"FILE *<variable>'['<size>']' [,...] ';'","FILE *logFiles[3];\nlogFiles[0] = fopen(\"log1.txt\", \"w\");",Array of file entity pointers for multi-DB/multifile scenarios. status=stable
+
+================================================================================
+TOKEN SIZE COMPARISON:
+================================================================================
+
+JSON Format:
+  - Token Count: 2126 tokens
+  - Character Count: 8092 chars
+
+TOON Format:
+  - Token Count: 1334 tokens
+  - Character Count: 5057 chars
+
+Savings:
+  - Token Savings: 792 tokens (37.25% reduction)
+  - Character Savings: 3035 chars (37.51% reduction)
+
+================================================================================
+✓ Process completed successfully
+================================================================================
