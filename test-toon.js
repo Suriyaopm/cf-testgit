@@ -3,7 +3,7 @@
 /**
  * Test script for TOON format encoding/decoding
  */
-
+#CF
 const { encode: toonEncode, decode: toonDecode } = require('@toon-format/toon');
 const { encode: tokenEncode } = require('gpt-tokenizer');
 
