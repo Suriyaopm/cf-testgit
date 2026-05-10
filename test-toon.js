@@ -1,5 +1,5 @@
 #!/usr/bin/env node
-
+ee
 /**
  * Test script for TOON format encoding/decoding
  */
