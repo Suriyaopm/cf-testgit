@@ -7,6 +7,7 @@
 - AI-powered documentation generation with 8 artifact types: Legacy Business Requirements, Comprehensive As-Is Business Requirements, Executive Summary, Legacy Technical Specification, Legacy Data Inventory, System Health Assessment, Modernization Roadmap, and Forward Engineering Blueprint
 - Custom Document Wizard with pre-built templates (Salesforce, IBM BPM, Java, ServiceNow) and user-saved templates
 - Configurable output modes: Compact, Concise, and Comprehensive with selectable output types (documentation, code, or both)
+- Test
 - Full-featured document viewer with PDF, Word, HTML, and JSON export
 - Mermaid diagram rendering for architecture, flow, and data structure visualizations
 - Section-level feedback and AI-powered regeneration without re-running full pipeline
