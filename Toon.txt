@@ -2,7 +2,6 @@ C:\Users\2000163804\OneDrive - Hexaware Technologies\Desktop\Projects\Toon>npm s
                      
 > toon-agent-client@1.0.0 start
 > node agent-client.js
-test
 === Azure AI Foundry Agent Client (TOON Format) ===
 Using official @toon-format/toon library
 
